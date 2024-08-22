@@ -1,4 +1,4 @@
-# Unit 8: Introduction to Object-Oriented Programming
+# Introduction to Object-Oriented Programming
 
 This unit introduces Object-Oriented Programming (OOP) concepts such as classes, object instances, and encapsulation. The focus will be on understanding how to structure and organize code using these fundamental OOP principles.
 
