@@ -46,7 +46,21 @@ class Library {
 
     // TODO: Implement a method to add a book to the library
     // Hint: Be sure to also update the Book List after updating the array of books
-    
+    addBook(book) {
+        if (book instanceof Book && book.title && book.author) {
+            this.books.push(book);
+            this.updateBookList();
+        } else {
+            alert('Invalid Book details. Please ensure both title and author are provided.');
+        }
+    }
+
+    removeBook(index) {
+        if (index >= 0 && index < this.books.length) {
+            this.books.splice(index, 1);
+            this.updateBookList();
+        }
+    }
     
 
 
@@ -60,6 +74,13 @@ class Library {
             const li = document.createElement('li');
             li.className = 'list-group-item';
             li.textContent = book.getDetails();
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.className = 'btn btn-danger btn-sm';
+            removeButton.setAttribute('data-index', index);
+
+            li.appendChild(removeButton);
             bookList.appendChild(li);
         });
     }
