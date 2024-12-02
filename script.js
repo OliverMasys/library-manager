@@ -97,7 +97,13 @@ document.getElementById('addBookForm').addEventListener('submit', function(event
 
     // TODO: Create a new book instance and add it to the library
     // Hint: Instantiate a new Book object with the provided title and author, then add it to the library's books array    
-    
+    if (title && author) {
+        const newBook = new Book(title, author);
+        library.addBook(newBook);
+    } else {
+        alert('Please provide both tile and the author.');
+    }
+
 
     // Clear form inputs
     document.getElementById('title').value = '';
