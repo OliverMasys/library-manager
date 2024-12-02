@@ -16,12 +16,17 @@
 class Book {
     // TODO: Create a constructor that takes two parameters: title and author
     // Hint: The constructor should initialize the title and author properties for each Book instance
-    
+    constructor(title, author) {
+        this.title = title;
+        this.author = author;
+    }
 
 
     // TODO: Implement a method to get the details of the book
     // Hint: This method should return a string in the format: "Title by Author"
-    
+    getDetails() {
+        return `${this.title} by ${this.author}`;
+    }
     
 
 }
