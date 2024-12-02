@@ -40,7 +40,9 @@ class Book {
 class Library {
     // TODO: Create a constructor with no parameters
     // Hint: This constructor should initialize an empty books array to track the Book objects in the library    
-
+    constructor() {
+        this.books = [];
+    }
 
     // TODO: Implement a method to add a book to the library
     // Hint: Be sure to also update the Book List after updating the array of books
