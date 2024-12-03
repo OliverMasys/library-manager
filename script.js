@@ -70,15 +70,19 @@ class Library {
         const bookList = document.getElementById('bookList');
         bookList.innerHTML = '';
 
-        this.books.forEach(book => {
+        this.books.forEach((book, index) => {
             const li = document.createElement('li');
-            li.className = 'list-group-item';
+            li.className = 'list-group-item d-flex justify-content-between align-items-center';
             li.textContent = book.getDetails();
 
             const removeButton = document.createElement('button');
             removeButton.textContent = 'Remove';
             removeButton.className = 'btn btn-danger btn-sm';
             removeButton.setAttribute('data-index', index);
+
+            removeButton.addEventListener('click', () => {
+                this.removeBook(index);
+            });
 
             li.appendChild(removeButton);
             bookList.appendChild(li);
